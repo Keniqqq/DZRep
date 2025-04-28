@@ -20,46 +20,36 @@ public class Main {
     }
 
     public static int chooseHobbyRecursive(int[] startNumbers, int day, int[] memory) {
-        // Если значение уже вычислено (в массиве memory), возвращаем его
-        if (memory[day] != 0) {
-            return memory[day];
-        }
 
-        // Если день находится в стартовых числах, берем значение напрямую
         if (day < 4) {
             return startNumbers[day];
         }
 
-        // Рекурсивно вычисляем предыдущее значение
+        if (memory[day] != 0) {
+            return memory[day];
+        }
+
         int prev = chooseHobbyRecursive(startNumbers, day - 1, memory);
-
-        // Рекурсивно вычисляем пре-пре-предыдущее значение
         int prePrePrev = chooseHobbyRecursive(startNumbers, day - 3, memory);
-
-        // Вычисляем текущее значение по формуле
         int result = (prev * prePrePrev) % 10 + 1;
 
-        // Сохраняем результат в массив memory
         memory[day] = result;
-
         return result;
     }
 
     public static int chooseHobbyIterative(int[] startNumbers, int day) {
         List<Integer> numbers = new ArrayList<>();
-
         numbers.add(startNumbers[0]);
         numbers.add(startNumbers[1]);
         numbers.add(startNumbers[2]);
         numbers.add(startNumbers[3]);
 
-        for (int d = 0; d < day; d++) {
-            int index = d + 4; // индексы дней в массиве сдвинуты на 4
-            int prev = numbers.get(index - 1); // предыдущее значение
-            int prePrePrev = numbers.get(index - 3); // пре-пре-предыдущее значение
+        for (int d = 4; d <= day + 3; d++) {
+            int prev = numbers.get(d - 1);
+            int prePrePrev = numbers.get(d - 3);
             numbers.add((prev * prePrePrev) % 10 + 1);
         }
 
-        return numbers.get(numbers.size() - 1);
+        return numbers.get(day + 3);
     }
 }
