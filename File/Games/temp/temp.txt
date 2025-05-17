@@ -1,0 +1,11 @@
+Не удалось создать директорию: C:\Users\Keniq\Games\src
+Не удалось создать директорию: C:\Users\Keniq\Games\res
+Не удалось создать директорию: C:\Users\Keniq\Games\savegames
+Не удалось создать директорию: C:\Users\Keniq\Games\temp
+Не удалось создать директорию: C:\Users\Keniq\Games\src\main
+Не удалось создать директорию: C:\Users\Keniq\Games\src\test
+Не удалось создать директорию: C:\Users\Keniq\Games\res\drawables
+Не удалось создать директорию: C:\Users\Keniq\Games\res\vectors
+Не удалось создать директорию: C:\Users\Keniq\Games\res\icons
+Файл уже существует: C:\Users\Keniq\Games\src\main\Main.java
+Файл уже существует: C:\Users\Keniq\Games\src\main\Utils.java
