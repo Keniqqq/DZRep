@@ -1,9 +1,4 @@
-package ru.netology.service;
-
-import ru.netology.db.Db;
-import ru.netology.db.DbSetting;
-import ru.netology.db.MyEntity;
-
+package ru.netology;
 import java.util.UUID;
 
 public class MyService {
@@ -11,9 +6,7 @@ public class MyService {
     private String name = "myService";
     private Db db = new Db(dbSetting);
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     public MyEntity setMyEntity(MyEntity myEntity) {
         myEntity.setId(UUID.randomUUID());
